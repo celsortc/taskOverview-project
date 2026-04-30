@@ -1,5 +1,29 @@
 function addTask() {
   const newTaskInput = document.querySelector(".task-input");
+  const tasks = document.querySelector(".tasks");
 
-  console.log(newTaskInput.value);
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+
+  if (newTaskInput.value === "") {
+    alert("Please enter a task.");
+    return;
+  }
+  li.textContent = newTaskInput.value;
+  span.textContent = "\u00d7"; // Unicode for multiplication sign (×)
+  span.classList.add("delete-btn");
+
+  li.appendChild(span);
+
+  tasks.appendChild(li);
+
+  newTaskInput.value = "";
+
+  tasks.addEventListener("click", completeTask);
+}
+
+function completeTask(event) {
+  if (event.target.tagName === "LI") {
+    event.target.classList.toggle("completed");
+  }
 }
