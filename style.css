@@ -110,7 +110,7 @@ li {
 
 .tasks li .task-text {
   display: inline-block;
-  max-width: 10ch;
+  max-width: 40ch;
   word-break: break-word;
 }
 
