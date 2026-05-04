@@ -8,7 +8,7 @@ tasks.addEventListener("click", () => {
   }
   console.log(event.target.closest("li"));
 
-  // saveData();
+  saveData();
 });
 
 function addTask() {
