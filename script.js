@@ -18,12 +18,18 @@ function addTask() {
   tasks.appendChild(li);
 
   newTaskInput.value = "";
+  newTaskInput.focus(); // volta foco pra janela de input
 
   tasks.addEventListener("click", completeTask);
+  span.addEventListener("click", removeTask);
 }
 
 function completeTask(event) {
   if (event.target.tagName === "LI") {
     event.target.classList.toggle("completed");
   }
+}
+
+function removeTask(event) {
+  event.target.parentElement.remove();
 }
