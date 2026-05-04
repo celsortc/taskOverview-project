@@ -1,6 +1,18 @@
+const tasks = document.querySelector(".tasks");
+
+tasks.addEventListener("click", () => {
+  if (event.target.classList.contains("delete-btn")) {
+    event.target.parentElement.remove();
+  } else if (event.target.closest("li")) {
+    event.target.closest("li").classList.toggle("completed");
+  }
+  console.log(event.target.closest("li"));
+
+  // saveData();
+});
+
 function addTask() {
   const newTaskInput = document.querySelector(".task-input");
-  const tasks = document.querySelector(".tasks");
 
   const li = document.createElement("li");
   const deleteBtn = document.createElement("span");
@@ -23,17 +35,6 @@ function addTask() {
 
   newTaskInput.value = "";
   newTaskInput.focus(); // volta foco pra janela de input
-
-  tasks.addEventListener("click", () => {
-    if (event.target.classList.contains("delete-btn")) {
-      event.target.parentElement.remove();
-    }
-    if (event.target.classList.contains("task-text")) {
-      event.target.firstElementChild.classList.toggle("completed");
-      event.target.classList.toggle("completed");
-    }
-    saveData();
-  });
 }
 
 function saveData() {
