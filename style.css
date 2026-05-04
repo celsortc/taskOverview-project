@@ -14,40 +14,54 @@ li {
   min-height: 100vh;
   width: 100%;
   padding: 10px;
-  background: blue;
+  background-color: #fafafa;
 }
 
 .todoList {
   margin: 100px auto 40px;
   background: #fff;
-  width: 400px;
+  width: 600px;
   border-radius: 10px;
+  box-shadow: 0px 0px 10px rgb(234, 234, 234);
+  padding: 20px;
 }
 
 .todoList h1 {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  color: #1a1a1a;
   padding: 30px 30px 15px 30px;
 }
 
 .row {
-  background-color: #edeef0;
+  background-color: rgb(247, 247, 247);
   margin: 0px 30px 30px 30px;
   border-radius: 30px;
   display: flex;
+  border: 1px solid transparent;
+}
+
+.row:focus-within {
+  box-shadow: 0px 0px 0px 1px rgb(127, 255, 0, 0.5);
+  border: 1px solid #7fff00;
 }
 
 .task-input {
-  height: 30px;
+  background-color: rgb(247, 247, 247);
+  border-radius: 30px;
+  height: 50px;
   padding: 20px;
   outline: none;
   border: none;
-  background: transparent;
   flex: 1;
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
+/* .task-input:focus {
+  box-shadow: 1px 1px 5px #7fff00;
+  border: 1px solid #7fff00;
+} */
 
 .task-input::placeholder {
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 
 .row button {
@@ -56,9 +70,13 @@ li {
   border-radius: 30px;
   outline: none;
   border: none;
-  background-color: chartreuse;
-  font-size: 0.75rem;
+  background-color: #7fff00;
+  font-size: 1rem;
   cursor: pointer;
+}
+
+.row button:hover {
+  background-color: #6fe000;
 }
 
 .tasks {
@@ -66,8 +84,20 @@ li {
 }
 
 .tasks li {
-  padding: 10px 10px 10px 50px;
+  padding: 15px 10px 15px 50px;
   position: relative;
+  margin: 10px 0px;
+  background-color: rgb(247, 247, 247, 0.2);
+  border: 1px solid rgb(247, 247, 247);
+  border-radius: 10px;
+  color: #1a1a1a;
+  font-size: 1rem;
+  user-select: none;
+}
+
+.tasks li:hover {
+  background: rgb(247, 247, 247);
+  cursor: pointer;
 }
 
 .tasks li::before {
@@ -77,9 +107,15 @@ li {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 0px;
-  background-image: url(./imgs/circle2.png);
+  left: 5px;
+  background-image: url(./imgs/Uncomplete.png);
   background-size: cover;
+}
+
+.tasks li .task-text {
+  display: inline-block;
+  max-width: 10ch;
+  word-break: break-word;
 }
 
 .delete-btn {
@@ -95,7 +131,6 @@ li {
   align-items: center;
   font-size: 1.5rem;
   color: darkgray;
-
   border-radius: 50%;
 }
 
@@ -109,11 +144,11 @@ li {
   /* border: 1px solid black; */
 }
 
-li.completed {
+.task-text.completed {
   text-decoration: line-through;
 }
 li.completed::before {
-  background-image: url(./imgs/circle1.png);
+  background-image: url(./imgs/Complete.png);
   width: 25px;
   height: 25px;
 }
