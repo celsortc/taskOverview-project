@@ -55,10 +55,6 @@ li {
   flex: 1;
   font-size: 1rem;
 }
-/* .task-input:focus {
-  box-shadow: 1px 1px 5px #7fff00;
-  border: 1px solid #7fff00;
-} */
 
 .task-input::placeholder {
   font-size: 1rem;
@@ -144,7 +140,7 @@ li {
   /* border: 1px solid black; */
 }
 
-.task-text.completed {
+.completed .task-text {
   text-decoration: line-through;
 }
 li.completed::before {
