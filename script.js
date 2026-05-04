@@ -3,17 +3,21 @@ function addTask() {
   const tasks = document.querySelector(".tasks");
 
   const li = document.createElement("li");
-  const span = document.createElement("span");
+  const deleteBtn = document.createElement("span");
+  const text = document.createElement("span");
 
   if (newTaskInput.value === "") {
     alert("Please enter a task.");
     return;
   }
-  li.textContent = newTaskInput.value;
-  span.textContent = "\u00d7"; // Unicode for multiplication sign (×)
-  span.classList.add("delete-btn");
+  text.textContent = newTaskInput.value;
+  text.classList.add("task-text");
 
-  li.appendChild(span);
+  deleteBtn.textContent = "\u00d7"; // Unicode for multiplication sign (×)
+  deleteBtn.classList.add("delete-btn");
+
+  li.appendChild(text);
+  li.appendChild(deleteBtn);
 
   tasks.appendChild(li);
 
@@ -21,11 +25,14 @@ function addTask() {
   newTaskInput.focus(); // volta foco pra janela de input
 
   tasks.addEventListener("click", completeTask);
-  span.addEventListener("click", removeTask);
+  deleteBtn.addEventListener("click", removeTask);
 }
 
 function completeTask(event) {
+  console.log(event.target.tagName);
+
   if (event.target.tagName === "LI") {
+    event.target.firstElementChild.classList.toggle("completed");
     event.target.classList.toggle("completed");
   }
 }
