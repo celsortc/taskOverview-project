@@ -24,19 +24,18 @@ function addTask() {
   newTaskInput.value = "";
   newTaskInput.focus(); // volta foco pra janela de input
 
-  tasks.addEventListener("click", completeTask);
-  deleteBtn.addEventListener("click", removeTask);
+  tasks.addEventListener("click", () => {
+    if (event.target.classList.contains("delete-btn")) {
+      event.target.parentElement.remove();
+    }
+    if (event.target.classList.contains("task-text")) {
+      event.target.firstElementChild.classList.toggle("completed");
+      event.target.classList.toggle("completed");
+    }
+    saveData();
+  });
 }
 
-function completeTask(event) {
-  console.log(event.target.tagName);
-
-  if (event.target.tagName === "LI") {
-    event.target.firstElementChild.classList.toggle("completed");
-    event.target.classList.toggle("completed");
-  }
-}
-
-function removeTask(event) {
-  event.target.parentElement.remove();
+function saveData() {
+  localStorage.setItem("tasks", tasks.innerHTML);
 }
