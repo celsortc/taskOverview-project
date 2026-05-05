@@ -1,4 +1,4 @@
-<h1 align="center">✅ To do List</h1>
+<h1 align="center">To do List ✅</h1>
 <p align="center">Aplicação de lista de tarefas desenvolvida para aprofundar conhecimentos em manipulação de DOM, persistência de dados e boas práticas de UX Design</p>
 
 <p align="center">
