@@ -12,7 +12,8 @@
 </p>
 
 <p align="center">
-  <img width="871" alt="Preview do projeto Todo List" src="SUA_IMAGEM_AQUI" />
+  <img width="1125" height="655" alt="image" src="https://github.com/user-attachments/assets/0814bf40-148f-4e39-99c0-8ad8189b9287" />
+
 </p>
 
 ## 💻 Projeto
