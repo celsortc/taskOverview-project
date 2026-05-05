@@ -6,7 +6,6 @@ tasks.addEventListener("click", () => {
   } else if (event.target.closest("li")) {
     event.target.closest("li").classList.toggle("completed");
   }
-  console.log(event.target.closest("li"));
 
   saveData();
 });
@@ -33,6 +32,8 @@ function addTask() {
 
   tasks.appendChild(li);
 
+  saveData();
+
   newTaskInput.value = "";
   newTaskInput.focus(); // volta foco pra janela de input
 }
@@ -40,3 +41,14 @@ function addTask() {
 function saveData() {
   localStorage.setItem("tasks", tasks.innerHTML);
 }
+
+function showData() {
+  const savedTasks = localStorage.getItem("tasks");
+  console.log(savedTasks);
+
+  if (savedTasks) {
+    tasks.innerHTML = savedTasks;
+  }
+}
+
+showData();
