@@ -77,6 +77,25 @@ li {
 
 .tasks {
   margin: 0px 30px 30px 30px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.tasks::-webkit-scrollbar {
+  width: 8px;
+}
+/* .tasks::-webkit-scrollbar-track {
+  background: #f1f1f1;  cor do trilho do scrollbar
+  border-radius: 10px;
+} */
+
+.tasks::-webkit-scrollbar-thumb {
+  background: #2a4e06;
+  border-radius: 10px;
+  min-height: 40px; /* evita o thumb ficar pequenininho */
+}
+
+.tasks::-webkit-scrollbar-thumb:hover {
+  background: rgba(42, 78, 6, 0.5);
 }
 
 .tasks li {
