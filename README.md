@@ -56,4 +56,4 @@ Este projeto foi desenvolvido com foco em aprendizado prático. Alguns dos princ
 
 <br>
 
-<p align="center"><strong>🔗 Link do deploy:</strong> <a href="SEU_LINK_AQUI" target="_blank">Clique Aqui</a></p>
+<p align="center"><strong>🔗 Link do deploy:</strong> <a href="https://celsortc.github.io/taskOverview-project/" target="_blank">Clique Aqui</a></p>
