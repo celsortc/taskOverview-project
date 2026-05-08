@@ -83,6 +83,7 @@ li {
   background-color: #7fff00;
   font-size: 1rem;
   cursor: pointer;
+  color: black;
 }
 
 .row button:hover {
