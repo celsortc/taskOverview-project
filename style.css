@@ -51,6 +51,7 @@ li {
   border-radius: 30px;
   display: flex;
   border: 1px solid transparent;
+  box-shadow: 5px 5px 10px rgb(227, 227, 227, 0.8);
 }
 
 .row:focus-within {
@@ -116,6 +117,7 @@ li {
   position: relative;
   margin: 10px 0px;
   background-color: rgb(247, 247, 247, 0.2);
+  box-shadow: 5px 5px 10px rgb(237, 237, 237, 0.5);
   border: 1px solid rgb(247, 247, 247);
   border-radius: 10px;
   color: #1a1a1a;
@@ -126,6 +128,7 @@ li {
 
 .tasks li:hover {
   background: rgb(247, 247, 247);
+  box-shadow: 5px 5px 10px rgb(237, 237, 237);
   cursor: pointer;
 }
 
