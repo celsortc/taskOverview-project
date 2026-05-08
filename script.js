@@ -1,13 +1,24 @@
 const tasks = document.querySelector(".tasks");
+const taskInput = document.querySelector(".task-input");
 
-tasks.addEventListener("click", () => {
-  if (event.target.classList.contains("delete-btn")) {
-    event.target.parentElement.remove();
-  } else if (event.target.closest("li")) {
-    event.target.closest("li").classList.toggle("completed");
+const events = ["click", "touchstart"];
+
+events.forEach((event) => {
+  tasks.addEventListener(event, (e) => {
+    if (e.target.classList.contains("delete-btn")) {
+      e.target.parentElement.remove();
+    } else if (e.target.closest("li")) {
+      e.target.closest("li").classList.toggle("completed");
+    }
+
+    saveData();
+  });
+});
+
+taskInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    addTask();
   }
-
-  saveData();
 });
 
 function addTask() {
@@ -19,6 +30,7 @@ function addTask() {
 
   if (newTaskInput.value === "") {
     alert("Please enter a task.");
+    newTaskInput.focus();
     return;
   }
   text.textContent = newTaskInput.value;
