@@ -1,19 +1,16 @@
 const tasks = document.querySelector(".tasks");
 const taskInput = document.querySelector(".task-input");
 
-const events = ["click", "touchstart"];
+tasks.addEventListener("click", manageTasks);
 
-events.forEach((event) => {
-  tasks.addEventListener(event, (e) => {
-    if (e.target.classList.contains("delete-btn")) {
-      e.target.parentElement.remove();
-    } else if (e.target.closest("li")) {
-      e.target.closest("li").classList.toggle("completed");
-    }
-
-    saveData();
-  });
-});
+function manageTasks(e) {
+  if (e.target.classList.contains("delete-btn")) {
+    e.target.parentElement.remove();
+  } else if (e.target.closest("li")) {
+    e.target.closest("li").classList.toggle("completed");
+  }
+  saveData();
+}
 
 taskInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
