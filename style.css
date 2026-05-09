@@ -246,6 +246,9 @@ footer a:hover::after {
 }
 
 @media (max-width: 500px) {
+  body {
+    min-height: 100vh;
+  }
   .tasks {
     max-height: 350px;
     margin: 0px;
@@ -253,6 +256,9 @@ footer a:hover::after {
 
   .tasks li .task-text {
     max-width: 25ch;
+  }
+  .todoList {
+    margin: 25px auto 20px;
   }
 
   .todoList h1 {
