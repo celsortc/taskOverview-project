@@ -27,6 +27,8 @@ taskInput.addEventListener("keypress", (e) => {
   }
 });
 
+let jaExibiu = false; // Variável para controlar a exibição do toast
+
 function addTask() {
   const newTaskInput = document.querySelector(".task-input");
 
@@ -35,7 +37,7 @@ function addTask() {
   const text = document.createElement("span");
 
   if (newTaskInput.value === "") {
-    alert("Please enter a task.");
+    showToast("Please enter a task.", "notText");
     newTaskInput.focus();
     return;
   }
@@ -54,6 +56,11 @@ function addTask() {
 
   newTaskInput.value = "";
   newTaskInput.focus(); // volta foco pra janela de input
+
+  if (!jaExibiu) {
+    showToast("Dica: Aperte enter para anotar as próximas tasks", "first");
+    jaExibiu = true; // Define como true para não exibir novamente
+  }
 }
 
 function saveData() {
@@ -70,3 +77,27 @@ function showData() {
 }
 
 showData();
+
+function showToast(message, type) {
+  const toastContainer = document.querySelector(".toastcontainer");
+
+  const toast = document.createElement("div");
+  toast.classList.add("toast-message", type);
+  toast.textContent = message;
+
+  toastContainer.appendChild(toast);
+
+  animaToast(toast);
+}
+
+function animaToast(t) {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => t.classList.add("show"));
+  });
+
+  // Remove após 3 segundos
+  setTimeout(() => {
+    t.classList.add("hide");
+    setTimeout(() => t.remove(), 300);
+  }, 3000);
+}
