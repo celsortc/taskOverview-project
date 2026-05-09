@@ -250,7 +250,7 @@ footer a:hover::after {
   }
 
   .tasks li .task-text {
-    max-width: 25ch;
+    max-width: 20ch;
   }
   .todoList {
     margin: 25px auto 20px;
@@ -263,5 +263,11 @@ footer a:hover::after {
 
   .row {
     margin: 0px 0px 15px 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .tasks li .task-text {
+    max-width: 15ch;
   }
 }
