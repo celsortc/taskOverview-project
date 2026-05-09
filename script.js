@@ -1,10 +1,10 @@
 // Fix for mobile Safari viewport height
 function setVh() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  let vh = window.innerHeight * 0.01; //1vh = 1% da altura da janela
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
 setVh();
-window.addEventListener('resize', setVh);
+window.addEventListener("resize", setVh);
 
 const tasks = document.querySelector(".tasks");
 const taskInput = document.querySelector(".task-input");
