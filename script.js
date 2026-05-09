@@ -5,6 +5,7 @@ function setVh() {
 }
 setVh();
 window.addEventListener("resize", setVh);
+window.addEventListener("orientationchange", setVh);
 
 const tasks = document.querySelector(".tasks");
 const taskInput = document.querySelector(".task-input");
