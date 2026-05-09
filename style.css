@@ -10,7 +10,6 @@ body {
   min-height: 100vh;
   display: flex;
   background-color: #fafafa;
-
   flex-direction: column;
 }
 
@@ -35,7 +34,7 @@ li {
   width: 100%;
   /* width: 600px; */
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgb(234, 234, 234);
+  box-shadow: 2px 2px 10px rgb(224, 224, 224);
   padding: 20px;
 }
 
@@ -92,7 +91,7 @@ li {
 
 .tasks {
   margin: 0px 30px 30px 30px;
-  max-height: 450px;
+  max-height: 300px;
   overflow-y: auto;
 }
 .tasks::-webkit-scrollbar {
@@ -220,8 +219,25 @@ footer a:hover::after {
 }
 
 @media (max-width: 600px) {
+  body {
+    min-height: 100vh;
+  }
+  .todoList {
+    margin: 50px auto 20px;
+    max-width: 90%;
+  }
+  .todoList h1 {
+    font-size: 1.25rem;
+    padding: 15px 15px 10px 15px;
+  }
+  .todoList-container {
+    padding: 0px;
+  }
+  .row {
+    margin: 0px 0px 15px 0px;
+  }
   .tasks {
-    /* max-height: 400px; */
+    max-height: 350px;
     margin: 0px;
   }
   .tasks li .task-text {
@@ -231,7 +247,7 @@ footer a:hover::after {
 
 @media (max-width: 500px) {
   .tasks {
-    max-height: 500px;
+    max-height: 350px;
     margin: 0px;
   }
 
