@@ -302,10 +302,26 @@ footer a:hover::after {
   .row {
     margin: 0px 0px 15px 0px;
   }
+  .toastcontainer {
+    position: fixed;
+    left: 8px;
+    top: 8px;
+  }
+  button {
+    z-index: 1000;
+  }
+  .toast-message.first {
+    display: none;
+  }
 }
 
 @media (max-width: 400px) {
   .tasks li .task-text {
     max-width: 20ch;
+  }
+  .toastcontainer {
+    position: fixed;
+    left: 8px;
+    top: 8px;
   }
 }
