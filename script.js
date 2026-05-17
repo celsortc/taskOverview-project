@@ -95,7 +95,7 @@ function animaToast(t) {
     requestAnimationFrame(() => t.classList.add("show"));
   });
 
-  // Remove após 3 segundos
+  // Remove toastMessage após 3 segundos
   setTimeout(() => {
     t.classList.add("hide");
     setTimeout(() => t.remove(), 300);
