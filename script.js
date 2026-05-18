@@ -59,7 +59,7 @@ function addTask() {
 
   if (!jaExibiu) {
     showToast("Dica: Aperte enter para anotar as próximas tasks", "first");
-    jaExibiu = true; // Define como true para não exibir novamente
+    jaExibiu = true; // Define como true para não exibir novamente a primeira mensagem.
   }
 }
 
