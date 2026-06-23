@@ -7,10 +7,10 @@ setVh();
 window.addEventListener("resize", setVh);
 window.addEventListener("orientationchange", setVh);
 
-const tasks = document.querySelector(".tasks");
+const taskBox = document.querySelector(".tasks");
 const taskInput = document.querySelector(".task-input");
 
-tasks.addEventListener("click", manageTasks);
+taskBox.addEventListener("click", manageTasks);
 
 function manageTasks(e) {
   if (e.target.classList.contains("delete-btn")) {
@@ -50,21 +50,27 @@ function addTask() {
   li.appendChild(text);
   li.appendChild(deleteBtn);
 
-  tasks.appendChild(li);
+  taskBox.appendChild(li);
 
   saveData();
 
   newTaskInput.value = "";
   newTaskInput.focus(); // volta foco pra janela de input
 
+  const tasks = taskBox.querySelectorAll("li");
+
   if (!jaExibiu) {
     showToast("Dica: Aperte enter para anotar as próximas tasks", "first");
     jaExibiu = true; // Define como true para não exibir novamente a primeira mensagem.
   }
+  // verificação para mensagem exibir novamente se necessário, quando usuário remove todas as tarefas.
+  if (jaExibiu && tasks.length - 1 === 0) {
+    showToast("Dica: Aperte enter para anotar as próximas tasks", "first");
+  }
 }
 
 function saveData() {
-  localStorage.setItem("tasks", tasks.innerHTML);
+  localStorage.setItem("tasks", taskBox.innerHTML);
 }
 
 function showData() {
@@ -72,7 +78,7 @@ function showData() {
   console.log(savedTasks);
 
   if (savedTasks) {
-    tasks.innerHTML = savedTasks;
+    taskBox.innerHTML = savedTasks;
   }
 }
 
